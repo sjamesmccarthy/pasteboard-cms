@@ -1,0 +1,8 @@
+User-agent: *
+Disallow: /pb-apps/
+Disallow: /pb-config/
+Disallow: /pb-helpers/
+Disallow: /pb-libraries/
+Disallow: /pb-libraries/etc/
+Disallow: /pb-sites/
+Sitemap: http://www.*/sitemap.xml

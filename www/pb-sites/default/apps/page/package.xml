@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8" ?>
+
+<package>
+
+	<name>page</name>
+	<url>http://www.pasteboard.org/</url>
+	<description>Default display manager for flat pages.</description>
+	<version>1.0</version>
+	<version_updated>2009-05-14 12:36:00</version_updated>
+	<author>James McCarthy</author>
+	<author_url>http://www.sjamesmccarthy.com</author_url>
+	<author_email>pb_team@pasteboard.org</author_email>
+	<license>GPL</license>
+	<installed>true</installed>
+	<install_date>2009-05-14 12:36:00</install_date>
+	
+</package>
+

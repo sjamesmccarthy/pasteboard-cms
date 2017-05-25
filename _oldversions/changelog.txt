@@ -1,0 +1,307 @@
+/**
+ * @FILE		changelog.txt
+ * @DESC		Summarizes changes that have been made
+ * @PACKAGE		PASTEBOARD
+ * @VERSION		1.1.0
+ * @AUTHOR		James McCarthy
+ * @EMAIL		james.mccarthy@mac.com
+ * @LICENSE		Commercial, Copyright 2008
+ * @FUNCTIONS	none
+ */
+
+
+### END version 1.0.10 (ant build)
+03-30-09	Added: FILES to /admin nav and removed "plugins" tab
+			Added: FILES module to /pb-admin/pb-forms/
+
+01-06-09	1.0 Updated: changed /pb-content/contentsnips/ to /library/
+			1.0	Updated: created new comment structure for files to reflect usage, etc. removed ?>
+			0.5 Updated: pb-configsite.php to /pb-content/config/siteconf.php
+			0.5 Added: notes.php file to remember what MODELS, VIEWS, LIBRARIES, PLUGINS, MODULES, etc mean. 
+
+01-05-09	1.0 Updated: directory structure for new MVC structure
+
+09-24-08	Updated: removed the page title from after Editing: in pages_form.php (admin)
+
+09-21-08	Updated: thankyou.xml to include <hr /> Back Home link
+
+09-18-09	Updated: Trucated web page titles on PAGES list
+			Fixed: Selects --- by default when creating new PAGE
+
+09-16-08	Fixed: 301 redirect rewrite in SETTINGS to .htaccess file
+			Updated: Serial Number to use $CONFIG[SERIALHASH] = MM-DD-YY-HH:MM
+			Updated: Made license filename the same as MD5(SERIALHASH) with "-" every 4 characters + .xml
+			Fixed: SETTINGS_FORM from not rewriting SERIALHASH var correctly
+			Updated: removed license info from dashboard and put into SETTINGS
+			Added PB_LICENSEFILE define statement to pb-config file
+			Updated: license agreement is PDF and linked from SETTINGS_FORM
+			
+09-15-08	Updated: Added 301 Redirect to htaccess file
+			Updated: Google Account/Verification labeling on SEO page
+			
+09-13-08	Added: SETTINGS option for toggling .htaccess PASSWORD REQUIRED
+			Added: SEO options and links to external sites
+			Updated: Removed Yahoo! Search ID
+			Updated: Added SYSTEM type to PAGES
+			
+09-12-08	Update: Minor modifications to settings.php file + removed SECTIONS box
+			Added: Licensing validation on login; not fully implemented
+			Updated: Action response block for SETTINGS
+			Updated: Enabled DELETE BACKUP HISTORY-ALL in SETTINGS
+			Fixed: Correct XML_NOT_FOUND error to push to 404.xml page
+			Added: ROBOTS.TXT toggle option in SETTINGS
+			Added: Delete Confirm to PAGES
+			Fixed: Alt CSS drop down on PAGES; default SELECT is ---
+			Fixed: If template doesn't exist default SELECT is ---
+			Fixed: Backup History table row highlighting
+			Fixed: Support link points to pw.com contact form
+			Fixed: Login fields consistent between IE7FF and MacFF
+			Added: Javascript to confirm deletion of files, etc.
+
+09-11-08	Fixed: TITLE field in now encoded properly.
+			Fixed: Added ms_char() to scrub emdashes; etc, from word pasting.
+			Fixed: Add ms_char() to admin-functions.php outputXML() function
+			Added: User manual link, Support links to dashboard, changed Visit Blog link
+			Added: Referral Form
+			Fixed: Globalized contact_mgr.php DOCUMENT_ROOT path info to be used in plugin.api
+			Added: Release notes in dashboard via RSS
+			Added: license RSS file and SERIAL to SETTINGS form
+
+09-10-08	Update: added TEMPLATEPATH define statement
+			Update: added /template directories to /themes
+			Fixed: changed pages_form.php to read new TEMPLATEPATH
+			
+09-08-08	Update: changed base default font for better cross-platform compatibility.
+
+09-07-08	Update: modified default template files and updated template snip_example.php
+			Fixed: version check for dashboard
+			Update: removed developer blog + cookie jar from dashboard form
+			Update: removed ability to "edit" Author
+			Fixed: $CONFIG[THEME] SELECTED on adding new page
+			
+07-28-08    Update: modified versioning format to INT(version) for easier comparison  
+            
+07-03-08    Update: pb-content_loader.php -> to include preview page option
+            Update: pb-css_loader.php -> to include the new "none" option
+            Added: update settings page (no error detection)
+            Fixed: GOOGLE_ANALYTICS field error in pb-configsite.php
+            Update: added clear-all history for settings and individual pages
+            Added: Preview source-code support HISTORY view
+            Version 109 released
+            
+07-02-08    Update: moved DB_USER, etc into configsite.php $CONFIG[] array
+            Added: delete profile option #commented out for now
+            Enabled flag in pages.php for USEBACKUP
+            Added: support to not display archived or draft pages in pb_content_loader.php
+            Added: history view of contact pages
+
+07-01-08 	Moved outputXML() into own function inside admin-functions.php for more uses
+			Completed Add, Edit, Rename, Delete functions for Pages
+			Updated: When adding new page don't display "Add, Rename" options
+			Updated: CSS for sidebar section heads
+			Added: file name cleaner, prevents spaces and symbols in filename
+			Disabled: sysadmin SELECT menu from main admin-nav bar
+			Version 108 released
+			
+06-30-08	Updated: removed _sidebar.php files used to load sidebar and inline with _form.php so that it becomes part of loading scope
+			Added: Editing auto-fills form.
+			Added: Writing to XML file through edit form
+			Updated: Select menus in edit mode
+			Updated: CSS for pages_form.php - still needs work for rest of _forms files
+			
+06-29-08	Updated: navbar so that it is compatible with IE7
+			Updated: Add sub-navigation area with simple include() files;
+			
+06-28-09	Added: profile app; reset password
+			Updated: CSS for admin; menu states; removed #appbox in admin_theme: default
+			Updated: sysadmin tools w/javascript
+			Addded: versioncheck() function => returns 0(false) 1(True) | version number
+
+06-27-08	Updated: Login process to be used a template in admin-themes
+			Added: Password reset function
+			Updated: changed query_select to query_exec in pb-db.php
+			Updated: admintheme: default to match login screen w/purple
+			Updated: page theme to match admin theme color
+			Added: plugin admin panel added (incomplete though)
+			Added: plugin package.xml file
+			Version 107 released
+			
+06-26-08 	Added: Filler pages for admin sections
+			Bug Fix: Missing $DBH in source files pb-db.php
+			Modified: options.php to be settings.php to avoid confusion
+			Bug Fix: Corrected second log-in through POST reloading after logging out in separate window/tab
+			Updated: Login script, moved to separate file from XML files
+			
+06-25-08	Updated: Dashboard, pages admin + template
+			Updated: Structure of sidebar for admin
+			
+06-24-08	Bug Fix: Corrected usage of session() function
+			Updated: XML files with new header information
+			
+06-23-08 	Updated: Continued CSS Layout for default admin theme
+			Bug Fix: Modified sessions to keep logged in if clicked "login"
+			Added: Changes to CSS file and default template
+			
+06-22-08	Updated: CSS layout for default admin theme
+			Bug Fix: header(location) not responding correctly in admin-functions.php
+			Added: Cookie set for user, role, permissions in _SESSION
+			Added: checklogin() snip to forward to pb-admin if already logged in
+			Bug Fix: Already logged in + $_SESSION problem fixed
+
+06-21-08	Updated: changed admin.xml to login.xml; modified badlogin.xml content
+			Created 2 column CSS layout for admin-themes/default
+
+06-20-08 	Added: admin.xml file, err_admin.js  and pb-login.php
+			Added: mysql_db->user table for admin login
+			Bug Fix: metatags are now pulled in from XML file and not hard-coded in pb-common. a few REQUIRED metatags are hardcoded in pb-common.php
+			Added: admin-themes dir to pb-admin, $CONFIG[ADMINTHEME] to pb-configsite.php
+			Added: admin default template (d1)
+			Added: pb-db.php CONNECTION/SELECT functions
+			Version 106 released
+			
+06-19-08 	Update: Changed how phpsnips are called from XML to match PHP syntax in template
+			Bug Fix: if get_header() called with empty (param) will attempt to load header/footer .php
+			Bug Fix: phpsnips not executing function or returning snippet_result
+			Added: header/footer files for subpages while using the same template.
+			Bug Fix: added recipient and redirect to contact_mgr.php and added write_to_csv.
+			Bug Fix: changed tell5 to share_mgr.php; moved error_correction to javascript dir
+			Updated: thankyou.xml file so that it returns custom messages.
+			
+06-18-08    Update: Changed how pb-start.php handles loading the template page.
+            Update: Moved $LICENSE to pb-template_loader.php
+            Added: get_meta() function to pb-common.php which handles metatag info
+            Bug Fix: if $value left blank in $METATAGS() the tag will be skipped
+            Update: dropped file extension in XML for <template> and <pagecss> elements
+            Bug Fix: corrected javascript error correction problem with new build
+            Version 105 released
+
+06-17-08    Update: Changed pb-core.php to pb-common.php
+            Update: Created new template to throw user-friedly errors: error('LineNumber', 'ErrorTitle', 'SourceFile, 'ErrorDetail');
+            Update: Changed .tpl to .php
+            Added functions: get_header, get_footer, get_documentheader to pb-common.php
+            Big Fix: phpsnips when using $SHOW[C] format
+            Updated: Integrated version check into webpage versioncheck.xml
+            Added: TPLEXT constant to change extension of template if needed
+            
+06-16-09    Update: Changed $CONFIG[] to define statements in pb-config.php file. Did not change pb-configsite.php $CONFIG var
+            Added: ob_start to index.php for future support
+            Added: new default artwork
+            Update: add CONFIG to pb-configsite.php file for use in templates; we don't want DEFINES to be used in templates
+            Update: default.tpl file will use $SHOW[C] 
+            Update: stripped index.php to 3 lines; moved code to separate php files
+            Modified: $CONFIG[SITE_THEME] to just [THEME]
+            Modified: Moved $CONFIG[GOOGLE_SITEMAP] to pb-configsite.php file
+            Version 104 released
+            
+06-13-09    Bug Fix: favicon path data
+ 	        Bug Fix: change path to default sales_lead_mgr form
+ 	        Bug Fix: remove <name> in To/CC fields
+ 	        Bug Fix: paths to /images/ directory in templates
+ 	        Bug Fix: .htaccess add Options -Indexes
+ 	        Bug Fix: redirect to 404.xml in index.php
+ 	        Bug Fix: make template name load as theme name "default.css" => /default/default.css
+ 	        Added: create /js driectory : make contact.xml use jscript src file
+ 	        Bug Fix: change default tpl/css filename to match theme directory names + update files
+ 	        Bug Fix: fix $PAGE[C] array => change to $SHOW[C]
+ 	        Bug Fix: replace _version1.1 /js files with deepwaterdev.com /js files
+ 	        Bug Fix: add / to end of directories in robots.txt file
+ 	        Bug Fix: add RewriteRule ^pages/([^/\.]+)/?$ index.php?page=$1 to .htaccess for "pages"
+ 	        Bug Fix: add cookies.js to /js directory (deepwaterdev.com)
+ 	        Updated: change .css file location for themes to /THEME_NAME/css/
+ 	        Updated: add /files to /pw-content for file downloads
+ 	        Updated: make mod_rewrite an option or remove all together
+ 	        Updated: add copyright function() to pw-core for all template
+ 	        Modified: mod ReWriteEngine to OFF
+ 	        Updated: changed name references of pw- to pb- (pasteboard)
+ 	        Version 102 and 103 released
+            
+02-16-08	Bug Fix: Redirect to 404.xml when page requested doesn't exist
+			Added /pw-content/js/ directory for site specific javascripts
+			Updated default contact.xml form to use javascript src file
+			
+02-07-08	Version 101 released
+
+02-05-08 	Beta 9 Build complete
+			Moved /version_checker from pw-apps to root/pw-versionchecker.php
+			Beautified pw-versioncheck.php
+			Minor changes to /pw-apps/saleslead_mgr.php (Added Bcc field)
+			Added /templatesnips directory under /themes
+			Added new DEFINE statements for PHPSNIPSPATH and TEMPLATESNIPSPATH
+			Moved /phpsnips and /templatesnips into /pw-content/phpsnips/ directory
+ 		
+02-04-08	Beta 8 Build complete
+			Added version.php file -> checks projectwebstart.com for updates
+			Added updater.xml file to projectwebstart.com <version> / <download> element keys
+			Made all /pw-apps directory names match app names
+			Added ability to reference XML data/template_snips by $PAGE[array]
+			Moved template_snip code into /pw-library/pw-load_templatesnips.php
+			Updated all /pw-apps
+			
+02-03-08	Beta 7 Build complete
+			Moved site information out of pw-config.php
+			Created pw-configsite.php for all site information
+			Renamed /pw-includes to /pw-library
+			Added <pagetype> to XML for XHTML and/or PHP type of documents
+			
+02-02-08	Beta 6 Build complete
+			Medium change to directory structure
+			Renamed /pages to /pw-content
+			Renamed /apps to /pw-apps ; moved to web_root
+			Renamed /engine to pw-includes ; removed from /webstart
+			Renamed /admin to pw-admin ; moved to web_root
+			Bug Fix: path variables
+			Bug Fix: css page-level path info not writing to template properly
+			Added template-snips ; snip_sample.php in /theme folders			
+			
+02-01-08	Beta 5 Build complete
+			Addded /apps/sitemap_builder app
+			Configured forms
+			Added pw-updater.xml file
+			Added sitemap app; builds sitemap.xml for google&yahoo
+			Tested in live environment
+			
+01-31-08	Beta 4 Build complete
+			Added CSS page-level support
+			Added $_SESSION[support] for cookies
+			Added multiple phpsnips in single XML document
+
+01-30-08	Added phpsnip functionality; called by {php}function_name->params{/php}
+			
+01-28-08	Upgraded current test environment
+			Changed load order of index.php
+			Changed load functionality of CSS and TEMPLATE file
+			Added <template>, <cssfile> elements to XML file
+			Modified LONG $CONFIG[] strings to shorter DEFINE() statements in index.php
+			
+01-27-08	Changed functions.php to core.php
+ 			Modified and Updated config.php files /webstart/engine + /site/
+ 			Moved /templates to /themes
+ 			Moved [template].css to /themes/[theme]
+ 			Moved [template].css /images to /themes/[theme]images/
+ 			Changed /site/site_config.php to config.php
+ 			Changed /webstart/functions.php to core.php
+
+01-23-08	Modifed META tags in XML doc per web research
+			Implemented XML parser for PHP4 and PHP5
+			Implemented mod_rewrite for clean URLs ?pages=home -> /pages/home
+
+01-22-08	Beta 3 Build complete
+
+01-21-08	Changed flat-file to XML file 
+				per security issues with including PHP code in flat-file
+			Upgraded current test environment
+
+01-16-08	Beta 2 Build complete
+
+01-12-08	Revisions made from @boomtown conversations
+ 			Organize files into /engine/, /site/ for easier webstart updates
+ 			Add /template/ directory
+ 			Add /engine/ directory
+ 			Upgraded current test environment
+ 			
+01-11-08	Beta 1 Build complete
+ 
+01-05-08	Version 1.0 Release
+			Initial development
+			1 template; flat-file; global config
+ 			

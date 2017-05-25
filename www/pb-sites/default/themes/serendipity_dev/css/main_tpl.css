@@ -1,0 +1,52 @@
+body {
+	font-family: verdana, sans-serif;
+	margin:20px 20px 20px 20px; 
+	padding:0px; 
+	background: #c5f8ff;
+	}
+
+#header {
+	margin:0px;
+	padding:0px;
+	}
+
+#content {
+	width:768px;
+	margin: 35px auto; /* Right and left margin widths set to "auto" */
+	padding:0;
+	}
+
+#postxt {
+	width: 680px; 
+	font-family: verdana, sans-serif;
+	font-size:9pt;
+	float: left;
+	}
+
+#postxt p {
+	padding: 0;
+	margin: 0;
+}
+
+#w3cbox img {
+	border: 0;
+}
+
+#w3cbox {
+	width: 88px;
+	height: 31px;
+	float: left;
+}
+
+#zero_border {
+	border:0;
+}
+
+#footerbox {
+	margin:-10px 0 0 4px;
+}
+
+/* Classes */
+.smalltext {
+	font-size: 9pt;
+}

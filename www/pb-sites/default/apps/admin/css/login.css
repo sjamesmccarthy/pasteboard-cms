@@ -1,0 +1,92 @@
+body {
+	margin: 0;
+	padding: 0;
+	font-family:"Lucida Grande", "Lucida Sans Unicode", Verdana, Arial, sans-serif;
+	background: #FFF;
+}
+
+#stripe {
+	width: 100%;
+	height: 30px;
+	background: #98A;
+}
+
+#stripe p {
+	font-size: 10pt;
+	margin: 0px 0 0 25px;
+	padding: 5px;
+}
+
+#logo_container {
+	margin: 60px auto 0px auto;
+	width: 300px;
+}
+
+#container {
+	margin: 60px auto 0 auto; /* if moving outside of gray box make top-margin: 0 */
+	width: 300px;
+	background: #CCC;
+	padding: 10px;  
+	-moz-border-radius: 15px;
+	-webkit-border-radius: 15px;
+}
+
+#container p {
+	text-align: left;
+}
+
+#login input.fields {
+	font-size: 20px;
+	width: 97%;
+	padding: 3px;
+}
+
+#login input.fields:hover {
+	background-color: #FFFFCC;
+}
+
+#login select:hover {
+	background-color: #FFFFCC;
+}
+
+#login select option {
+	background-color: #FFFFCC;
+}
+
+#button {
+	float:right;
+	margin: auto;
+}
+
+#rememberme {
+	text-align: left;
+	font-size: 8pt;
+	margin: auto;
+}
+
+#forgot {
+	font-size: 8pt;
+}
+
+#forgot_container {
+	margin: -5px auto;
+	width: 300px;
+	background: #FFF;
+	padding: 0 0 0 0; 
+}
+
+#forgot_container p {
+	font-size: 8pt;
+	text-align: left;
+}
+
+#error {
+	margin: 20px 0 0 0;
+	border: 1px solid red;
+	background: #F3F5B5;
+}
+
+#error p {
+	text-align: center;
+	line-height: 100%;
+}

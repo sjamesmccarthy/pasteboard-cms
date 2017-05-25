@@ -1,0 +1,174 @@
+/pasteboard/UPDATE: YES
+This is the system area of the CMF (Content Management Framework) and all files and directories within this top level only effect the CMF and not the content or design of the website itself. The index.php page is only a wrapper file.
+
+index.php
+license.txt
+robots.txt
+.htaccess - http://www.yourhtmlsource.com/sitemanagement/urlrewriting.html
+.htpasswd
+
+/pb-config/UPDATE: YES
+This is where the default config files for the site are located. It also includes various other config type information for libraries. If these are not found nothing works.
+
+	pb-config.php
+	stopwords-config.php
+	useragents-config.php
+	dates-config.php
+	fopen-config.php
+
+/pb-sites/UPDATE: NO, THIS AREA SHOULD NOT BE TOUCHED DURING UPDATES
+This is the content area and where user files should be kept. These might include: files, themes, additional client-side scripts, images and csvdata from online format. Typically the user should only need to access items in this area and nothing in the main SYSTEM area unless they are developing or installing plugins/helpers. 
+
+	/default/
+		/csvdata/
+		/files/
+		/helpers/
+        Are single file scripts that have no views. They _only_ RETURN data.
+			helper_helloworld.php
+			x_helper_showversion.php
+		/images/ {not associated with the theme}
+		/js/
+        /logs/
+           log-060809.php 
+		/modules/
+		/themes/
+		/scripts/
+		cron.php
+		configsite.php
+	/new.website.com/
+	
+/pb-libraries/UPDATE: YES
+A file including the collection of similar functions that extend the pasteboard framework. Must be reusable code by other HELPERS, PLUGINS and MODELS. Example: a library of misc. date functions, or string functions, timers, email, form validation.
+	
+	/etc/
+	This is where third-party extensions are installed
+		/tiny_mce
+		/magpierss
+		/css
+			/blueprint (http://www.blueprintcss.org/)
+		/js
+			jquery.js (http://jquery.com/)
+			pngfix.js (http://homepage.ntlworld.com/bobosola/)
+			pngfix_map.js
+			pngfix_transparentpixel.gif
+		
+	pb-bootstrap
+    pb-log
+	pb-benchmark
+	pb-dates
+	pb-log
+	pb-render
+	pb-system
+    pb-user_agent
+	pb-database
+	pb-ajax (javascript)
+	
+    pb-caching
+        (_get)
+        (_write)
+        (_delete)
+		
+	pb-hooks
+        /* function */
+        helper($name)
+        
+        /* Include Tags */
+		get_header
+		get_footer
+        get_search_box
+		get_help_link
+        get_bread_crumb
+        get_site_*
+            name, email, phone, support_emails
+
+        /* Login,logout,location (BOOLEAN)*/
+		is_logged_in 
+		is_admin
+		is_front
+        
+        /* Date & Time: use pb-dates.lib */
+        the_time('12',0) // 03:36 PM ('24',1) 15:36:09
+        the_month('long') // June ('short') Jun
+        the_day('long') // Tuesday ('short') Tues
+        the_year('long') // 2009 ('short') 09
+        the_long_date // Tuesday, June 04, 2009 ('short') Tue, Jun 04, 09
+        the_short_date('-') // 06-04-09 ('.',4) 06.04.2009
+		the_date_xml // 2009-06-04
+        the_date_mysql // 2009-06-04 17:16:32  
+		
+	pb-formatting (manipulations on strings)
+	    ms_word_clean
+	    stopwords
+        truncate_x_words
+        sanitize_title('_') // makes spaces '_' and html_entifies special chars
+		filter_html
+        
+	pb-email
+	    send
+	    is_email - define('VALID_EMAIL', "/^[a-z0-9!#$%&'*+\/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+\/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+(?:[a-z]{2,4}|museum|travel)$/i");
+	    captcha (captcha.org)
+
+    pb-session
+        _initsession
+        _sessiondestory
+        _sessiondb
+        get_userdata('PARAM') -> from DB
+        
+/pb-helpers/UPDATE: YES
+Helpers are simple, procedural functions that add functionality to the site, as well as to content. Each helper function performs one specific task, with no dependence on other functions. Helper files are not loaded by default, so the first step in using a Helper is to load it. Once loaded, it becomes globally available in your application and views. Helpers are typically stored in /pb-helpers/ (global to all sites) or /pb-sites/[sitename]/helpers/ directory if they are site specific.
+
+	pb-cookie_helper
+	pb-date_helper
+	pb-download_helper
+	pb-typography_helper
+	
+/pb-plugins/UPDATE: YES
+Plugins add functionality to the site, not the content, and work almost identically to Helpers. The main difference is that a plugin also provides an admin interface, whereas a Helper is usually a collection of functions that extend the core system. Plugins are intended to be created and shared by our community. Plugins should be saved to your /pb-plugins/ (global to all sites) directory or /pb-sites/[sitename]/plugins/ directory if they are site specific.
+
+	pb-tell_a_friend
+		models/ (admin models are prefixed with admin-)
+		views/ (admin views are prefixed with admin-)
+		controller.php
+		package.xml
+	pb-form_manager
+	
+/pb-apps/UPDATE: YES
+Applications extend, build or enhance the website's content. They use the pasteboard libraries and helpers and plugins. Like plug-ins, they are MVC-simple structure and include views for both front/back-end interfaces.
+	
+	pb-page
+		models/ (admin models are prefixed with admin-)
+		views/ (admin views are prefixed with admin-)
+			view.php
+			admin-form.php
+			admin-index.php
+		controller.php
+		package.xml
+	pb-blog
+	pb-formums
+	pb-admin
+	
+---
+MVC SUMMARY	
+A MVC architecture seperates a web application into three primary layers. The model layers abstracts a domain-specific data model and interacts with the data persistence layer on its behalf (usually a database but could also be XML or text files). The Controller interacts with the user through an interface (e.g. a webpage). The Controller receives information or requests from the user, routes these to the appropriate place in the application and returns the application’s response to the user. The View layer adds presentation templates (e.g. styles, themes, etc.) to the data that comes from the model layer, before it is sent back to the user interface by the Controller.
+
+PROJECT GOALS
+The goals of the pasteboard project include: 1) Procedural programming for an easy to follow pattern for desingers and novice PHP programmers, 2) Scalable for one or multiple site projects minimizing code maintenance, 3) Flexible code base to build more complex applications that are site and task specific, 4) Make themeing and templating easy to understand by keeping it straight-forward X(HTML)/CSS with short-tag PHP to call special hooks for inserting dynamic content, navigation and widgets.
+
+CORE/RECOMMENDED MODULE CODING STYLES
+codeiginter -   http://codeigniter.com/user_guide/general/styleguide.html   -   most OSS 
+drupal      -   http://drupal.org/node/1354                                 -   least OSS
+worpress    -   http://codex.wordpress.org/WordPress_Coding_Standards       -   OSS/custom
+
+FUNCTIONS
+function_title()     = public function accessible by user, such as an action via URI:/module/action, reservered pb_ for framework
+_function_title()    = private function related to framework referenced outside/inside of parent (library) file
+__function_title()   = private function only referenced within same library (parent) file
+pb_function_title()  = public function accessible by other modules, helpers and themes/templates; core related
+mod_function_title() = the main function of the module, all other functions will be referenced as above
+
+VARIABLES
+$_variable 
+$variable
+$variable_name
+$VARIABLENAME
+

@@ -1,0 +1,10 @@
+/* MAKE THIS FILE XML BASED SO THAT IT IS MORE STANDARIZED */
+
+name = pages
+description = Controls the "static" pages of a website.
+version = 1.0; 2009-05-29 16:36:00
+url = http://www.pasteboard.org/pages/mod_pages/view
+author = pasteboard team <pb_team@pasteboard.org>
+license = GPL
+package = core; 0.1.0; required
+installed = true; 2009-05-14 12:36:00

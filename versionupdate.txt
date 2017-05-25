@@ -1,0 +1,116 @@
+/*
+// -------------------------------------------------------------------
+// VERSION UPDATE NOTES
+// -------------------------------------------------------------------
+// This is a simple developer notes file of new features, bugs, etc.
+// It is not a user manual. It changes all the time. It should be made
+// into an app (or module) once the framework is complete.
+*/
+
+1.0.0 (TODO)
+	
+	UPD - ADMIN (left-NAV control) idea, http://docs.jquery.com/UI/Datepicker#theming
+	UPD - update package.xml to include <sql_statements> for install
+	UPD - database schema / remove _meta tables / cleanup pb_page table
+	ADD	- if system pages are not found in DB use system views.
+	ADD - wireframe dashboard (similar to webgen/wordpress)
+	ADD - Create a default system view for http://www.whatbrowser.org/en/browser/
+ 	ADD - Create new "We're Online" default theme/templates (default home page in database) -> http://crowdfavorite.com/
+	ADD - APP: ADMIN (login) 
+	ADD - APP: PAGES (admin area)	
+	UPD - Multi-site (verify DB support)
+    UPD - code review (#1) add commenting, check var/fun style guide
+	UPD - pasteboard.org template
+    ADD - documentation, license, download
+    
+1.0.1 (TODO)
+	ADD - Make an app the default 'page' (e.g, re
+	ADD - page caching (Your database usage can effectively be reduced to zero for any pages that have been cached.) see http://www.crippleheart.com/staging/user_guide/database/caching.html for details on implementation
+	
+1.0.0 (DONE)
+
+	UPD - set_cookie for bad browser pass-thru (is_IE6)
+	UPD - remember me cookie to use user "ID" and not "login". This will blend confusion more.	
+	UPD - changed diagnostics to show on &profile=1, then sets _SESSION to keep persistent during session
+	ADD - remember me feature/auto-login like wordpress
+	UPD - cookie_helper DEFINE(COOKIEHASH)
+	UPD - load_helper looks in /main/ and /site/apps/helpers/	UPD - check for _helper.php and if not found ADD it to the filename
+	UPD - Added light cookie support
+	ADD	- helper function for DATES
+	UPD - _SESSION: user_name is being set as email, if email is used.
+	UPD - update email library for simple-mail like short-sql: mail_to(), mail_from(), mail_replyto(), mail_subject(), mail_msg(wordwrap), mail_attach(), mail_send()
+	UPD - fixed short-sql update
+	UPD - db_query add, mysql_real_escape_string($foo);
+	UPD - email library added injection check
+	UPD - Javascript in admin/login form
+	UPD - option to use email as login
+	UPD - remember me option changed to simply select the duration of time
+	ADD - completed db_update/insert/delete
+	ADD - completed updated ADMIN login, bad pswd, reset pswd, logout
+	UPD - fancy URLs using page_slug
+	UPD - passwords are now stored/reset as MD5 hash in DB
+	UPD - Created _SESSION[username] and /dashboard/ check that it exists
+	UPD - Ln.90 scaffolding-lib CONSTANTS need to be updated to new VARs SITE_INFO
+	UPD - move login.css from THEME to APP CSS dir
+	UPD - fixed show_404 redirect, moved $pb into function as global.
+	UPD - remove $pb from show_404(), maybe add argument for custom msg.
+	UPD - check to see why pb[VARS] is now empty in diagnostics-helper
+	UPD - extract now checks for specific arrays and uses them
+	UPD - notification alert box on login_view wrap @45 words; single line
+	UPD - $notification_msg and $notification_title
+	UPD - change $pb['VARS']['_GET']['result'] / REMOVE ['_GET']
+	UPD - extract to use _GET as single vars
+	UPD - Catch no TPL file error (needs testing)
+	ADD - Fix 'admin-' prefix (don't want it hard coded); made a DEFINE statement in pb-config.php
+	UPD - Add siteconfig DEFINEs to $pb array for use in tpl/view files
+	UPD - Short-SQL db_query so that it builds the statement in specified order
+	UPD - Get multiple VIEWS from TPL file [get_view('most_recent');] => look inside [apps]/views/
+	UPD - fix $pb[CACHE] var not being set when NULL; ln 152 diagnostics_helper
+	UPD _ do not load meta if 404
+	UPD - get_footer / get_header functions
+	ADD - Added CSS, JS, META, FAV_ICON support
+	ADD - Create code.google.com project/ under james.mccarthy google account
+ 	ADD - Create app_registry in DB for ADMIN listing
+	ADD	- Added CORE SHORT_SQL functions
+	UPD - __route_page function for future USE_CACHE option
+	ADD - 404 and MAINTENANCE handling (show_404 and _show_maintenance functions)
+	UPD - template and view to include vars/functions
+	UPD - moved query_exec() results into $pb['DATA']
+	ADD - database query_exec() returns db object to $pb['DATABASE']['sql_result'][$key]
+	ADD - Created page_controller.php and page_view_model.php files
+	ADD - Create/install database table structure for users and page application
+	UPD - moved benchmark functions into bootstrap file
+	UPD - created boilerplate for config files
+	UPD - moved auto_load output into array
+	UPD	- Condensed pb-log into pb-bootstrap
+	UPD - Identifies is_IE6 and is_mobile (mobile device array needs refreshing)
+	UPD - Fine-tuned logging and error logging
+	UPD - Updated URI_SEGMENTOR with various fixes
+	ADD - Write ERROR routine that adds to the global $pb array and writes log_msg
+	UPD - Updated URI_Segment function to accept *.php extension anywhere in URI
+	UPD - Fixed small bug in URI_Segment function to prevent duplicate keys from being passed
+	UPD - moved URI_Segment function into pb-bootstrap.
+	UPD - merged pb-router with pb-bootstrap. 
+	ADD	- created pb-render.php library with display function; psuedo code
+	UPD - if .php script does not exist then errors out.
+	ADD - if URI include .php then include script from within /sites/[sitename]/scripts dir
+	UPD - is_front now is initialized as UNDEFINED
+	ADD - new directory structure for MVC
+	ADD - new pb-ini_settings.php file (UPLOAD, MAGIC QUOTES, ETC)
+	UPD - existing code base to load template
+	UPD - create dummy library files and MVCs (precurse with x_)
+	ADD - system.php library (timer, preint_r, autoload)
+	UPD	- combine all "loader" files into 1 library file (template load)
+	UPD - Refine bootstrap; remove use of GLOBAL and pass arguments instead 
+	ADD - version_compare(PHP_VERSION, '5.2', '<') and exit('Kohana requires PHP 5.2 or newer.');
+	UPD - Change all commenting headers and function headers to match CI	  
+	ADD - Libraries: user_agent, database, site_setup
+    ADD - implemented mod_rewrite rule for URI segmenting
+    UPD - URI segmenting in pb-router : make it toggle (mod_rewrite/QUERY)
+    UPD - autoload function now takes an array key for directory value
+    ADD - created two config files: date and fopen for short-tags; autoloads
+    ADD - log file &library written; writes to /pb-sites/[site]/logs directory
+    ADD - pb-log.php library file writes to file and screen for E_WARNINGS
+    UPD - file status short-cuts in the fopen-config.php file CLEANUP
+	ADD - install database + tables to start db_ LIB testing
+	UPD - add "info" log updates to loading certain _bootstrap function
