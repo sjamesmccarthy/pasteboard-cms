@@ -1,3 +1,10 @@
+@Author: James McCarthy
+@Date:   05-02-2017 12:13:52
+@Email:  james@jmccarthy.xyz
+@Filename: versionupdate.txt
+@Last modified by:   James McCarthy
+@Last modified time: 05-25-2017 11:49:07
+@Copyright: 2017
 /*
 // -------------------------------------------------------------------
 // VERSION UPDATE NOTES
@@ -5,10 +12,11 @@
 // This is a simple developer notes file of new features, bugs, etc.
 // It is not a user manual. It changes all the time. It should be made
 // into an app (or module) once the framework is complete.
+
 */
 
 1.0.0 (TODO)
-	
+
 	UPD - ADMIN (left-NAV control) idea, http://docs.jquery.com/UI/Datepicker#theming
 	UPD - update package.xml to include <sql_statements> for install
 	UPD - database schema / remove _meta tables / cleanup pb_page table
@@ -16,21 +24,21 @@
 	ADD - wireframe dashboard (similar to webgen/wordpress)
 	ADD - Create a default system view for http://www.whatbrowser.org/en/browser/
  	ADD - Create new "We're Online" default theme/templates (default home page in database) -> http://crowdfavorite.com/
-	ADD - APP: ADMIN (login) 
-	ADD - APP: PAGES (admin area)	
+	ADD - APP: ADMIN (login)
+	ADD - APP: PAGES (admin area)
 	UPD - Multi-site (verify DB support)
     UPD - code review (#1) add commenting, check var/fun style guide
 	UPD - pasteboard.org template
     ADD - documentation, license, download
-    
+
 1.0.1 (TODO)
 	ADD - Make an app the default 'page' (e.g, re
 	ADD - page caching (Your database usage can effectively be reduced to zero for any pages that have been cached.) see http://www.crippleheart.com/staging/user_guide/database/caching.html for details on implementation
-	
+
 1.0.0 (DONE)
 
 	UPD - set_cookie for bad browser pass-thru (is_IE6)
-	UPD - remember me cookie to use user "ID" and not "login". This will blend confusion more.	
+	UPD - remember me cookie to use user "ID" and not "login". This will blend confusion more.
 	UPD - changed diagnostics to show on &profile=1, then sets _SESSION to keep persistent during session
 	ADD - remember me feature/auto-login like wordpress
 	UPD - cookie_helper DEFINE(COOKIEHASH)
@@ -90,7 +98,7 @@
 	UPD - Updated URI_Segment function to accept *.php extension anywhere in URI
 	UPD - Fixed small bug in URI_Segment function to prevent duplicate keys from being passed
 	UPD - moved URI_Segment function into pb-bootstrap.
-	UPD - merged pb-router with pb-bootstrap. 
+	UPD - merged pb-router with pb-bootstrap.
 	ADD	- created pb-render.php library with display function; psuedo code
 	UPD - if .php script does not exist then errors out.
 	ADD - if URI include .php then include script from within /sites/[sitename]/scripts dir
@@ -101,9 +109,9 @@
 	UPD - create dummy library files and MVCs (precurse with x_)
 	ADD - system.php library (timer, preint_r, autoload)
 	UPD	- combine all "loader" files into 1 library file (template load)
-	UPD - Refine bootstrap; remove use of GLOBAL and pass arguments instead 
+	UPD - Refine bootstrap; remove use of GLOBAL and pass arguments instead
 	ADD - version_compare(PHP_VERSION, '5.2', '<') and exit('Kohana requires PHP 5.2 or newer.');
-	UPD - Change all commenting headers and function headers to match CI	  
+	UPD - Change all commenting headers and function headers to match CI
 	ADD - Libraries: user_agent, database, site_setup
     ADD - implemented mod_rewrite rule for URI segmenting
     UPD - URI segmenting in pb-router : make it toggle (mod_rewrite/QUERY)
